@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <!-- <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> -->
+    <title></title>
+    <link rel="stylesheet" href="/static/css/reset.css">
+    <style>
+      #app .web-wrapper{position: absolute;top: 0;left:0;bottom:0;right:0;z-index: 11111;background: rgba(0, 0, 0, 0.6);}
+      #app .web-wrapper .out-wrapper{position: absolute;top: 0;left:0;bottom:0;right:0;width:506px;height:430px;margin: auto;background: rgba(255, 255, 255, 1);}
+      #app .web-wrapper .out-wrapper #webcam{margin: 50px auto;padding: 0 93px;}
+      #app .web-wrapper .out-wrapper .submit-btn{display: block;text-align: center;padding: 10px 0 5px 0;}
+      #app .web-wrapper .out-wrapper .submit-btn a{display: inline-block;text-align: center;width: 120px;height: 30px;line-height: 30px;background: #333;color:#fff;border-radius: 5px;}
+      #app .web-wrapper .out-wrapper #canvas{opacity: 0;}
+      /*#XwebcamXobjectX{margin:auto;}*/
+      #app .web-wrapper .out-wrapper #canvas{position: absolute;top: -99999999900px;left: -999999999999999px;z-index: 111111111;}
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <!-- 动态入口路由 -->
+       <router-view></router-view>
+       <!-- <div class="web-wrapper">
+          <div class="out-wrapper">
+             <div id="webcam"></div>
+             <div class="submit-btn">
+               <a href="javascript:webcam.capture();void(0);">截取</a>
+             </div>
+             <canvas id="canvas" width="320" height="240"></canvas>
+          </div>
+         
+       </div> -->
+       
+    </div>
+    <!-- built files will be auto injected -->
+    <script src="/static/js/fastclick.js"></script>
+    <!-- <script src="/static/js/jquery-1.11.3.min.js"></script>
+    <script src="/static/js/jquery.webcam.min.js"></script> -->
+    <script>
+       if ('addEventListener' in document) {
+          document.addEventListener('DOMContentLoaded', function() {
+              FastClick.attach(document.body);
+          }, false);
+       }
+     </script>
+  </body>
+</html>
