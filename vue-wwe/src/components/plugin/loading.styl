@@ -1,0 +1,50 @@
+.loading-shade
+    position: fixed
+    top: 0
+    left: 0
+    bottom: 0
+    right: 0
+    z-index: 100
+    background: rgba(0, 0, 0, 0.4)
+    // background: rgba(255, 255, 255, 0.7)
+    -webkit-transition: all 0.6s
+    &.loadingShow-enter-active
+      opacity: 1
+    &.loadingShow-enter, &.loadingShow-leave-active
+      opacity: 0
+    .loading-icon
+      position: absolute
+      top: 0
+      left: 0
+      bottom: 0
+      right: 0
+      margin: auto
+      border-radius: 15px
+      width: 70px
+      height: 58px
+      padding-top: 12px
+      text-align: center
+      // background: rgba(0, 0, 0, 0.7)
+      color: #fff
+      i
+        display: inline-block
+        font-size: 26px
+        animation: rotate 1.2s linear infinite
+        -webkit-animation: rotates 1.2s linear infinite
+      @keyframes rotate
+        0%
+          transform: rotate(0deg)
+        50%
+          transform: rotate(180deg)
+        100%
+          transform: rotate(360deg)
+      @-webkit-keyframes rotates
+        0%
+          -webkit-transform: rotate(0deg)
+        50%
+          -webkit-transform: rotate(180deg)
+        100%
+          -webkit-transform: rotate(360deg)
+      p
+        padding: 14px 0
+        font-size: 14px
