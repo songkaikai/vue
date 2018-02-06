@@ -1,0 +1,105 @@
+// 上边框 1px
+border-top-1px($color)
+  // position: relative
+  &:before
+    display: block
+    position: absolute
+    left: 0
+    top: 0
+    width: 100%
+    z-index: 1
+    border-top: 1px solid $color
+    content: ' '
+
+// 下边框 1px
+border-bottom-1px($color)
+  // position: relative
+  &:after
+    display: block
+    position: absolute
+    left: 0
+    bottom: 0
+    width: 100%
+    z-index: 1
+    border-bottom: 1px solid $color
+    content: ' '
+
+// 下边框 1px
+border-bottom-npx($color, $n, $left, $width)
+  // position: relative
+  &:before
+    display: block
+    position: absolute
+    left: $left
+    bottom: 0
+    width: $width
+    z-index: 1
+    border-bottom: $n solid $color
+    content: ' '
+    
+// 左边框 1px
+border-left-1px($color,$top,$height)
+  // position: relative
+  &:after
+    display: block
+    position: absolute
+    left: 0
+    top: $top
+    height: $height
+    z-index: 1
+    border-left: 1px solid $color
+    content: ' '
+
+// 左边框 1px
+border-left-npx($color,$n,$left,$top,$height)
+  // position: relative
+  &:after
+    display: block
+    position: absolute
+    left: $left
+    top: $top
+    height: $height
+    border-left: $n solid $color
+    content: ' '
+   
+// 右边框 1px
+border-right-1px($color)
+  // position: relative
+  &:before
+    display: block
+    position: absolute
+    right: 0
+    top: 0
+    height: 100%
+    border-right: 1px solid $color
+    content: ' '
+
+after-yuan($color,$top,$left,$height)
+  // position: relative
+  &:before
+    display: block
+    position: absolute
+    left: $left
+    top: $top
+    width: 8px
+    height: 8px
+    border-radius: 50%
+    background: $color
+    content: ' '
+
+// 隐藏 1px边框
+border-none()
+  &:after
+    display: none
+
+// 不定位 按照父元素 宽高 100% 背景图
+bg-image($url)
+  background: url($url + ".png") no-repeat 0 0 / 100% auto
+
+
+// 定位小图标背景
+bg-small-image($url,$positionx,$positiony,$size)
+  background: url($url + ".png") no-repeat $positionx $positiony / $size auto
+  
+  // @media (-webkit-min-device-pixel-ratio: 3),(min-device-pixel-ratio: 3)
+    // background-image: url($url + "@3x.png")
